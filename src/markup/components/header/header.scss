@@ -1,0 +1,8 @@
+.header {
+    height: rem(100);
+    border-bottom: rem(1) solid #bcbec0;
+    
+    @include below($tab) {
+        height: rem(110);
+    }
+}

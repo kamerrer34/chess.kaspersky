@@ -1,0 +1,32 @@
+.partners {
+    
+    &__container {
+        padding-top: rem(90);
+        padding-bottom: rem(45);
+        
+        @include below($tab) {
+            padding-top: rem(94);
+            padding-bottom: rem(22);
+        }
+    }
+    
+    &__title {
+        margin-bottom: rem(26);
+        
+        @include below($tab) {
+            margin-bottom: rem(28);
+        }
+    }
+    
+    &__text {
+        margin-bottom: rem(105);
+        
+        text-align: center;
+        font-size: rem(24);
+        line-height: (48/24);
+    
+        @include below($tab) {
+            margin-bottom: rem(55);
+        }
+    }
+}

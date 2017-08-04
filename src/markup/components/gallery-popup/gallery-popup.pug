@@ -1,0 +1,7 @@
+include ../popup/popup
+include ../gallery-post/gallery-post
+
+mixin gallery-popup(data)
+    .popup-wrapp
+        +popup().gallery-popup#popup
+            +gallery-post()

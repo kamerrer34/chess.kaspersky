@@ -1,0 +1,9 @@
+.lang {
+    position: absolute;
+    top: rem(35);
+    right: 0;
+    
+    @include below($tab) {
+        display: none;
+    }
+}

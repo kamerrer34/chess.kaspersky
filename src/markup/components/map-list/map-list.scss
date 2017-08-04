@@ -1,0 +1,42 @@
+.map-list {
+    &__container {
+        padding-top: rem(30);
+        padding-bottom: rem(50);
+        max-height: rem(530);
+        overflow-y: auto;
+    }
+    
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: rem(315);
+        margin-bottom: rem(40);
+    }
+    
+    &__title {
+        margin-bottom: rem(2);
+        font-size: rem(20);
+        line-height: (36/20);
+        font-weight: 700;
+    }
+    
+    &__text {
+        font-weight: 300;
+        font-size: rem(14);
+        line-height: (18/14);
+        
+        &_descr {
+            padding: rem(7) 0;
+            margin-bottom: rem(12);
+            border-top: rem(1) solid rgba(126, 132, 142, 0.08);
+            border-bottom: rem(1) solid rgba(126, 132, 142, 0.08);
+            color: #c5c7cb;
+        }
+    }
+}

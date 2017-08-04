@@ -1,0 +1,43 @@
+.header-nav {
+    position: absolute;
+    left: rem(285);
+    top: rem(35);
+    
+    @include below($tab) {
+        display: none;
+    }
+    
+    &__list {
+        @include list-reset();
+    }
+    
+    &__item {
+        display: inline-block;
+        width: rem(100);
+        vertical-align: top;
+        margin-right: rem(70);
+        text-align: center;
+        
+        &.active {
+            position: relative;
+            
+            &:before {
+                position: absolute;
+                left: 0;
+                bottom: rem(-29);
+                
+                width: 100%;
+                height: rem(4);
+                content: '';
+                background-color: $color-1;
+            }
+        }
+    }
+    
+    &__link {
+        font-size: rem(14);
+        line-height: rem(36);
+        font-weight: 500;
+        color: #7f858f;
+    }
+}

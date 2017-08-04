@@ -1,0 +1,11 @@
+mixin partners-list(data)
+    +b.partners-list
+        each item in data
+            +e.item
+                +e.head
+                    +e.IMG.logo(src='%=static=%img/assets/partners/' + item.logo, class='_' + item.logo)
+                    +e.SPAN.name #{item.name}
+
+                +e.info
+                    each p in item.info
+                        +e.P.paragraph!= p

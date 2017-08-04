@@ -1,0 +1,48 @@
+.dropdown {
+    position: relative;
+    
+    width: rem(110);
+    
+    &__list {
+        @include list-reset();
+        position: absolute;
+        z-index: 100;
+    
+        display: none;
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-top: none;
+        background-color: #fff;
+    }
+    
+    &__link {
+        display: block;
+        
+        font-size: rem(14);
+        line-height: rem(36);
+        text-align: center;
+        font-weight: 500;
+        color: #7f858f;
+        
+        &_title {
+            position: relative;
+    
+            background-color: transparent;
+            transition: background-color 0.25s;
+    
+            &.active {
+                background-color: $color-1;
+            }
+            
+            &:before {
+                position: absolute;
+                top: rem(16);
+                right: rem(14);
+                
+                border: rem(4) solid transparent;
+                border-top-color: #7f858f;
+                content: '';
+            }
+        }
+    }
+}

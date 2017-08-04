@@ -1,0 +1,15 @@
+include ../anchor/anchor
+include ../partners-list/partners-list
+
+mixin partners(data)
+    +b.SECTION.partners#partners
+        +e.container.container
+            +anchor('#partners')
+
+            +e.H2.title.title Партнеры
+
+            +e.P.text
+                | «Лаборатория Касперского» — официальный партнер по кибербезопасности ФИДЕ, World Chess
+                | и чемпионского цикла турниров World Chess 2017-18.
+
+            +partners-list(partnersList.main)

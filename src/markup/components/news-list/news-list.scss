@@ -1,0 +1,49 @@
+.news-list {
+    
+    &__container {
+        padding-top: rem(110);
+        padding-bottom: rem(90);
+    
+        @include below($tab) {
+            padding-top: rem(42);
+        }
+    }
+    
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: rem(370);
+        height: rem(440);
+        margin-bottom: rem(50);
+        border: rem(1) solid #e7e8ec;
+        border-radius: rem(3);
+        overflow: hidden;
+    
+        @include below($tab) {
+            width: rem(330);
+            height: rem(465);
+            margin-bottom: rem(65);
+        }
+    }
+    
+    &__more {
+        display: block;
+        margin: auto;
+        width: rem(270);
+        height: rem(60);
+    
+        border: rem(1) solid #e7e8ec;
+        border-radius: rem(4);
+        
+        line-height: rem(60);
+        text-align: center;
+        font-size: rem(20);
+        color: #2a2d32;
+    }
+}

@@ -1,0 +1,98 @@
+.chessplayer {
+    
+    &__container {
+        padding-top: rem(90);
+        padding-bottom: rem(120);
+    
+        @include below($tab) {
+            padding-top: rem(90);
+            padding-bottom: rem(135);
+        }
+    }
+    
+    &__title {
+        margin-bottom: rem(30);
+    
+        @include below($tab) {
+            width: rem(500);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: rem(40);
+            
+            line-height: (60/44);
+        }
+    }
+    
+    &__text {
+        text-align: center;
+        font-size: rem(23);
+        line-height: (48/23);
+    }
+    
+    &__info {
+        margin-top: rem(195);
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+    
+        @include below($tab) {
+            margin-top: rem(72);
+            text-align: center;
+        }
+    }
+    
+    &__column {
+        display: flex;
+        flex-direction: column;
+    
+        @include below($tab) {
+            width: 100%;
+            align-items: center;
+        }
+        
+        &_text {
+            width: rem(810);
+            
+            @include below($tab) {
+                width: 100%;
+            }
+        }
+    }
+    
+    &__pic {
+        width: rem(288);
+        border-radius: 50%;
+    }
+    
+    &__name {
+        margin-bottom: rem(40);
+        
+        font-size: rem(24);
+        line-height: 1;
+        font-weight: 700;
+        color: #2a2d32;
+    
+        @include below($tab) {
+            margin-top: rem(46);
+            margin-bottom: rem(48);
+        }
+    }
+    
+    &__description {
+        width: rem(835);
+        
+        font-size: rem(16);
+        line-height: (36/16);
+        font-weight: 300;
+    
+        @include below($tab) {
+            width: rem(555);
+            margin-left: auto;
+            margin-right: auto;
+            
+            font-size: rem(24);
+            line-height: (48/24);
+        }
+    }
+}

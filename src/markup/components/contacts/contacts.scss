@@ -1,0 +1,27 @@
+.contacts {
+    
+    &__container {
+        padding-top: rem(90);
+        padding-bottom: rem(85);
+    
+        @include below($tab) {
+            padding-top: rem(95);
+            padding-bottom: rem(120);
+        }
+    }
+    
+    &__title {
+        margin-bottom: rem(26);
+    }
+    
+    &__text {
+        text-align: center;
+        font-size: rem(24);
+        line-height: (48/24);
+    }
+    
+    &__link {
+        display: inline-block;
+        color: #7e848e;
+    }
+}

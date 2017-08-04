@@ -1,0 +1,7 @@
+include ../popup/popup
+include ../news-post/news-post
+
+mixin news-popup(data)
+    .popup-wrapp
+        +popup().news-popup#popup
+            +news-post()

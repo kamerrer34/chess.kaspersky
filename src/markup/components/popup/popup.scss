@@ -1,0 +1,33 @@
+.mfp-close-btn-in .mfp-close {
+    right: rem(-55);
+    
+    width: rem(32);
+    height:rem(32);
+    
+    font-family: $font-1;
+    font-size: rem(54);
+    line-height: 0;
+    font-weight: 100;
+    color: #fff;
+    opacity: 1;
+}
+
+.mfp-inline-holder,
+.mfp-ajax-holder {
+    .mfp-content {
+        width: rem(924);
+        margin-top: rem(50);
+        margin-bottom: rem(50);
+        border-radius: rem(7) rem(7) rem(16) rem(16);
+        
+        background-color: #fff;
+    
+        @include below($tab) {
+            width: rem(724);
+        }
+    }
+}
+
+.popup-wrapp {
+    display: none;
+}

@@ -1,0 +1,16 @@
+include ../anchor/anchor
+include ../search/search
+include ../map-tabs/map-tabs
+
+mixin map(data)
+    +b.SECTION.map#map
+        +e.container.container
+            +anchor('#map')
+
+            +e.H2.title.title Где можно поиграть в шахматы
+
+            +search(search.city).map__search._city
+
+            +search(search.section).map__search._section
+
+        +map-tabs()

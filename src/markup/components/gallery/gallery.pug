@@ -1,0 +1,12 @@
+include ../gallery-list/gallery-list
+include ../anchor/anchor
+
+mixin gallery(data)
+    +b.SECTION.gallery(id=data.id)
+        +e.container.container
+            if data.id !== 'gallery-first'
+                +anchor('#' + data.id)
+
+            +e.H2.title Мероприятие посвященное шахматному спорту
+
+            +gallery-list()

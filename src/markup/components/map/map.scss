@@ -1,0 +1,40 @@
+.map {
+    margin-bottom: rem(80);
+    
+    &__container {
+        padding-top: rem(87);
+    
+        @include below($tab) {
+            padding-top: rem(93);
+        }
+    }
+    
+    &__title {
+        margin-bottom: rem(65);
+    
+        @include below($tab) {
+            margin-bottom: rem(163);
+        }
+    }
+    
+    &__search {
+        display: inline-block;
+        width: rem(230);
+        z-index: 5;
+    
+        @include below($tab) {
+            width: rem(250);
+        }
+        
+        &_city {
+            position: relative;
+            
+            margin-left: rem(-12);
+        }
+        
+        &_section {
+            position: absolute;
+            right: rem(-12);
+        }
+    }
+}

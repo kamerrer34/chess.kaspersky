@@ -1,0 +1,12 @@
+include ../icon/icon
+
+mixin news-social(data)
+    +b.news-social
+        +e.UL.list
+            each item in data
+                +e.LI.item
+                    +e.A.link(href=jv0, class='_' + item)
+                        +e.SPAN.icon(class='_' + item)
+                            +icon({icon: item})
+
+                        +e.SPAN.text 678

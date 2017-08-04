@@ -1,0 +1,18 @@
+include ../anchor/anchor
+
+mixin news(data)
+    +b.SECTION.news#news
+        +e.container.container
+            +anchor('#news')._news
+
+            +e.list
+                - for (var x = 0; x < 3; x++)
+
+                    +e.item
+                        +e.date 22 июня 2017
+
+                        +e.text
+                            | «Лаборатория Касперского» начинает партию в шахматы: компания стала
+                            | партнером ФИДЕ и World Chess
+
+            +e.A.link(href='news.html') Посмотреть все

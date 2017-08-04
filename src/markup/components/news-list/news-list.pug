@@ -1,0 +1,15 @@
+include ../news-post/news-post
+include ../news-popup/news-popup
+
+
+mixin news-list(data)
+    +b.SECTION.news-list
+        +e.container.container
+            +e.inner
+                - for (var x = 0; x < 12; x++)
+                    +e.item
+                        +news-post('preview')
+
+            +e.A.more(href=jv0) Загрузить ещё
+
+            +news-popup()

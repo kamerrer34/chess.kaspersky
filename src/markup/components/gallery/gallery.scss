@@ -1,0 +1,30 @@
+.gallery {
+    &:nth-of-type(1) {
+        .gallery__container {
+            padding-top: rem(40);
+            padding-bottom: rem(50);
+    
+            @include below($tab) {
+                padding-bottom: rem(68);
+            }
+        }
+    }
+    
+    &__container {
+        padding-top: rem(65);
+        padding-bottom: rem(120);
+    }
+    
+    &__title {
+        margin-top: 0;
+        margin-bottom: rem(35);
+        
+        font-weight: 700;
+        font-size: rem(24);
+        line-height: 1;
+    
+        @include below($tab) {
+            margin-bottom: rem(40);
+        }
+    }
+}

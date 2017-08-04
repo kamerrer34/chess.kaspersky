@@ -1,0 +1,119 @@
+.search {
+    &__select {
+        width: 100%;
+    }
+}
+
+.select2-container{
+    &.select2-container--search {
+        
+        &.select2 {
+            padding: rem(8) rem(12) 0;
+    
+            border: rem(1) solid transparent;
+            border-bottom: none;
+        }
+        
+        &.select2-container--open {
+            border-color: rgba(0, 0, 0, 0.05);
+            
+        }
+        
+        .select2-selection {
+            height: rem(34);
+            border-bottom: rem(1) solid rgba(126, 132, 142, 0.08);
+            outline: none;
+            
+            &__rendered {
+                position: relative;
+                
+                padding-left: rem(20);
+                font-size: rem(14);
+                line-height: (30/14);
+                font-weight: 300;
+                color: #7e848e;
+    
+                @include below($tab) {
+                    font-size: rem(16);
+                }
+                
+                &:before {
+                    position: absolute;
+                    top: rem(9);
+                    left: 0;
+    
+                    display: block;
+                    width: rem(10);
+                    height: rem(10);
+                    
+                    content: '';
+                    background-image: url(%=static=%/assets/search/loupe.svg);
+                    background-size: rem(10);
+    
+                    @include below($tab) {
+                        top: rem(12);
+                    }
+                }
+            }
+            
+            &__placeholder {
+               font: inherit;
+            }
+        }
+    
+        .select2-dropdown {
+            border:rem(1) solid rgba(0, 0, 0, 0.05);
+            border-top: none;
+            border-radius: 0;
+            
+            .select2-search--dropdown {
+                margin-top: rem(-30);
+                margin-bottom: rem(11);
+                padding: 0;
+                padding-left: rem(32);
+            }
+            
+            .select2-search__field {
+                padding: 0;
+                border: none;
+                outline: none;
+                font-weight: 300;
+                font-size: rem(14);
+                background-color: #fff;
+                color: #7e848e;
+    
+                @include below($tab) {
+                    font-size: rem(16);
+                }
+            }
+            
+            .select2-results{
+                max-height: rem(155);
+                overflow-y: auto;
+                padding-left: rem(32);
+                padding-bottom: rem(5);
+                padding-right: rem(10);
+    
+                @include below($tab) {
+                    max-height: rem(175);
+                }
+                
+                &__option {
+                    padding: 0;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    font-size: rem(14);
+                    line-height: (30/14);
+                    font-weight: 300;
+                    color: #7e848e;
+    
+                    @include below($tab) {
+                        font-size: rem(16);
+                    }
+                }
+            }
+        }
+    }
+}
+

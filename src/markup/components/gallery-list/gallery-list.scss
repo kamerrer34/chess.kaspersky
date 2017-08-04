@@ -1,0 +1,90 @@
+.gallery-list {
+    @include clearfix();
+    margin-right: rem(-6);
+    
+    @include below($tab) {
+        margin-right: rem(-5);
+    }
+    
+    &__link {
+        width: rem(190);
+        height: rem(190);
+        margin-right: rem(6);
+        margin-bottom: rem(6);
+        float: left;
+        overflow: hidden;
+        background-color: $color-1;
+    
+        @include below($tab) {
+            width: rem(115);
+            height: rem(115);
+            margin-right: rem(5);
+            margin-bottom: rem(5);
+        }
+        
+        &:nth-of-type(3),
+        &:nth-of-type(4),
+        &:nth-of-type(10) {
+            width: rem(386);
+    
+            @include below($tab) {
+                width: rem(235);
+            }
+        }
+        
+        &:nth-of-type(4) {
+            height: rem(386);
+    
+            @include below($tab) {
+                height: rem(235);
+            }
+        }
+        
+        &:hover {
+            .gallery-list__img {
+                opacity: 0;
+            }
+        }
+    }
+    
+    &__img {
+        position: relative;
+        
+        width: 100%;
+        
+        opacity: 1;
+        transition: opacity 0.25s;
+    }
+    
+    &__icon {
+        @include center();
+        white-space: nowrap;
+        
+        &:before,
+        &:after {
+            display: inline-block;
+            vertical-align: middle;
+            width: rem(30);
+            height: rem(30);
+            margin: 0 rem(15);
+            content: '';
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+    
+            @include below($tab) {
+                width: rem(22);
+                height: rem(22);
+                margin: 0 rem(9);
+            }
+        }
+    
+        &:before {
+            background-image: url(%=static=%/minified-svg/add.svg);
+        }
+    
+        &:after {
+            background-image: url(%=static=%/minified-svg/info.svg);
+        }
+    }
+}

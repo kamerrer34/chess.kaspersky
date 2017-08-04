@@ -1,0 +1,10 @@
+include ../logo/logo
+include ../header-nav/header-nav
+include ../lang/lang
+
+mixin header(data)
+    +b.HEADER.header()&attributes(attributes)
+        .container
+            +logo()
+            +header-nav()
+            +lang()

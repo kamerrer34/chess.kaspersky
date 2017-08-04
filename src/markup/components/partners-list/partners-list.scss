@@ -1,0 +1,69 @@
+.partners-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: rem(565);
+        padding-right: rem(55);
+    
+        @include below($tab) {
+            width: 100%;
+            padding-right: 0;
+            margin-bottom: rem(30);
+        }
+    }
+    
+    &__logo {
+        display: inline-block;
+        vertical-align: middle;
+        
+        &_logo1 {
+            width: rem(98);
+        }
+        
+        &_logo2 {
+            width: rem(61);
+        }
+    }
+    
+    &__name {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: rem(20);
+        
+        font-size: rem(24);
+        font-weight: 700;
+        color: #2a2d32;
+    }
+    
+    &__info {
+        margin-top: rem(35);
+    
+        @include below($tab) {
+            margin-top: rem(31);
+        }
+    }
+    
+    &__paragraph {
+        margin-top: 0;
+        margin-bottom: rem(30);
+        font-size: rem(16);
+        line-height: (30/16);
+        font-weight: 300;
+        color: #7e848e;
+    
+        @include below($tab) {
+            margin-bottom: rem(48);
+            
+            font-size: rem(24);
+            line-height: (48/24);
+        }
+    }
+    
+    &__link {
+        color: inherit;
+    }
+}

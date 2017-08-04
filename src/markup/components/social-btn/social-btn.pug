@@ -1,0 +1,9 @@
+include ../icon/icon
+
+mixin social-btn(data)
+    +b.social-btn()&attributes(attributes)
+        +e.UL.list
+            each item in data
+                +e.LI.item
+                    +e.A.link(href=jv0)
+                        +icon({ icon: item })

@@ -1,0 +1,20 @@
+extends ../layouts/default
+
+include ../components/about/about
+include ../components/map/map
+include ../components/news/news
+include ../components/chessplayer/chessplayer
+include ../components/partners/partners
+include ../components/contacts/contacts
+
+
+block vars
+    -pageSettings.title = 'Главная';
+
+block content
+    +about()
+    +map()
+    +news()
+    +chessplayer()
+    +partners()
+    +contacts()

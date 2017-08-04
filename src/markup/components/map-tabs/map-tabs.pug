@@ -1,0 +1,15 @@
+include ../map-location/map-location
+include ../map-list/map-list
+
+mixin map-tabs(data)
+    +b.map-tabs
+        +e.head
+            +e.A.head-link(href=jv0).active Карта
+            +e.A.head-link(href=jv0) Список
+
+        +e.body
+            +e.container.active
+                +map-location()
+
+            +e.container
+                +map-list()

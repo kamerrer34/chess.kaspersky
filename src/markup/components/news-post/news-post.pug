@@ -1,0 +1,32 @@
+include ../news-social/news-social
+
+mixin news-post(data)
+    +b.news-post(class={'_full': data !== 'preview'})
+        if data === 'preview'
+            +e.A.img._preview.js-open-post(href=jv0)
+                img(src='http://lorempixel.com/400/300/business/1/')
+        else
+            +e.A.img.js-open-post(href=jv0)
+                img(src='http://lorempixel.com/800/600/business/1/')
+        +e.info
+            +e.A.title.js-open-post(href=jv0) Интересный заголовок
+            +e.date 5 июня 2017
+            +e.text(class={'_full js-scroller': data !== 'preview'})
+                if data === 'preview'
+                    | Акцентуированная личность дает контраст. Стратификация просветляет опасный субъект.
+                    | Акцентуация, в представлении Морено.
+
+                else
+                    div
+                        - for (var x = 0; x < 3; x++)
+                            p
+                                | Арпеджио синхронно. Аллегро mezzo forte выстраивает ревер, и если в одних голосах или пластах
+                                | музыкальной ткани сочинения еще продолжаются конструктивно-композиционные процессы предыдущей
+                                | части, то в других - происходит становление новых. Живая сессия многопланово образует рок-н-ролл
+                                | 50-х. Поп-индустрия, следовательно, представляет собой звукоряд. Звукоряд, по определению, mezzo
+                                | forte имитирует хроматический сет. Крещендирующее хождение дисгармонично. Эффект "вау-вау"
+                                | изящно имитирует модальный кризис жанра.
+
+
+        if data !== 'preview'
+            +news-social(newsSocial.post)

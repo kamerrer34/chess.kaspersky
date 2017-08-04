@@ -1,0 +1,132 @@
+.map-location {
+    
+    &__wrap {
+        height: rem(600);
+    }
+    
+    &__inner {
+        width: rem(270) !important;
+        height: rem(210) !important;
+        padding: rem(15) rem(20);
+        margin-left: rem(210);
+        margin-top: rem(120);
+        border-radius: rem(10);
+        text-align: left;
+        
+        background-color: #fff;
+        box-shadow: 0 3px 20px rgba(0, 0, 0, 0.2);
+        
+        &:before {
+            position: absolute;
+            left: rem(-24);
+            top: 0;
+            bottom: 0;
+            
+            display: block;
+            width: 0;
+            height: 0;
+            margin: auto;
+            border: rem(12) solid transparent;
+            border-right-color: #fff;
+            content: '';
+        }
+        
+        &.add {
+            margin-top: rem(150);
+        }
+    }
+    
+    &__arr {
+        display: none;
+    }
+    
+    .gm-style-iw {
+        position: static !important;
+        width: auto !important;
+    }
+    
+    &__title {
+        margin-bottom: rem(2);
+        
+        font-weight: 700;
+        font-size: rem(20);
+        line-height: (36/20);
+        color: #000;
+    }
+    
+    &__text {
+        font-weight: 300;
+        font-size: rem(14);
+        line-height: (18/14);
+        color: #000;
+    
+        &_descr {
+            padding: rem(6) 0;
+            margin-bottom: rem(15);
+            border-top: rem(1) solid rgba(126, 132, 142, 0.08);
+            border-bottom: rem(1) solid rgba(126, 132, 142, 0.08);
+            color: #c5c7cb;
+            
+        }
+    }
+    
+    &__form {
+        width: 100%;
+        padding-top: rem(10);
+    }
+    
+    &__input,
+    &__textarea {
+        width: 100%;
+        height: rem(30);
+        padding: rem(10);
+        margin-bottom: rem(15);
+        
+        line-height: rem(30);
+        font-size: rem(14);
+        font-weight: 300;
+        
+        border: rem(1) solid rgba(0, 0, 0, 0.05);
+        border-radius: rem(2);
+        outline: none;
+        transition: border-color 0.25s;
+        
+        &:focus {
+            border-color: $color-1;
+        }
+    }
+    
+    &__textarea {
+        height: rem(68);
+        padding: 0 rem(10);
+        resize: none;
+        line-height: (36/14);
+    }
+    
+    &__btn {
+        width: rem(100);
+        height: rem(30);
+        
+        text-align: center;
+        font-size: rem(14);
+        font-weight: 500;
+        
+        border: none;
+        border-radius: rem(2);
+        background-color: $color-1;
+        color: #fff;
+        
+    }
+    
+    &__container {
+        padding-top: rem(42);
+        padding-bottom: rem(33);
+    }
+    
+    &__add {
+        font-weight: 300;
+        font-size: rem(14);
+        line-height: 1;
+        color: #7e848e;
+    }
+}

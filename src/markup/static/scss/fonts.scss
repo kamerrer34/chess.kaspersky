@@ -1,0 +1,6 @@
+@include font-face('Museo Sans Cyrl', '../fonts/MuseoSansCyrl-100', 100, $exts: eot woff ttf);
+@include font-face('Museo Sans Cyrl', '../fonts/MuseoSansCyrl-300', 300, $exts: eot woff ttf);
+@include font-face('Museo Sans Cyrl', '../fonts/MuseoSansCyrl-500', 500, $exts: eot woff ttf);
+@include font-face('Museo Sans Cyrl', '../fonts/MuseoSansCyrl-700', 700, $exts: eot woff ttf);
+
+$font-1: 'Museo Sans Cyrl', Helvetica, Arial, sans-serif;

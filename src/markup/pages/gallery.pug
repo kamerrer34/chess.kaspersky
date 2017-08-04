@@ -1,0 +1,13 @@
+extends ../layouts/default
+
+include ../components/gallery/gallery
+include ../components/gallery-popup/gallery-popup
+
+block vars
+    -pageSettings.title = 'Фотографии';
+
+block content
+    +gallery(gallery.first)
+    +gallery(gallery.second)
+
+    +gallery-popup()

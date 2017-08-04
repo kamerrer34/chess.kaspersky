@@ -1,0 +1,12 @@
+include ../anchor/anchor
+
+mixin contacts(data)
+    +b.SECTION.contacts#contacts
+        +e.container.container
+            +anchor('#contacts')
+
+            +e.H2.title.title Контакты
+
+            +e.P.text
+                | Если у вас остались вопросы или вы хотите узнать больше, это можно сделать через
+                | #[<a class="contacts__link" href="javascript:void(0)">форму обратной связи.</a>]

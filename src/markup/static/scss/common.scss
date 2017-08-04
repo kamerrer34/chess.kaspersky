@@ -1,0 +1,61 @@
+// Common styles of the project
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: $font-1;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    
+    @include below($laptop) {
+        font-size: 16 / 1280 * 100 + vw;
+    }
+    
+    @include below($tab) {
+        font-size: 16 / 900 * 100 + vw;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    border-bottom: rem(1) solid #e7e8ec;
+}
+
+.container {
+    position: relative;
+    
+    width: rem(1170);
+    margin: 0 auto;
+    
+    @include below($tab) {
+        width: rem(720);
+    }
+}
+
+.title {
+    margin-top: 0;
+    margin-bottom: rem(40);
+    
+    font-size: rem(44);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: rem(0.3);
+}
+
+.nano { background: #bba; width: 500px; height: 500px; }
+.nano > .nano-content { padding: 10px; }
+.nano > .nano-pane   { background: #888; }
+.nano > .nano-pane > .nano-slider { background: #111; }

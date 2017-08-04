@@ -1,0 +1,8 @@
+mixin dropdown(data)
+    +b.dropdown()&attributes(attributes)
+        +e.A.link_title.js-dropdown-toggle(href=jv0) #{data.title}
+
+        +e.UL.list
+            each item in data.items
+                +e.LI.item
+                    +e.A.link(href=item.url, class=item.class) #{item.title}

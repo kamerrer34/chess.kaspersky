@@ -1,0 +1,100 @@
+.news {
+    background-color: $color-1;
+    
+    &__container {
+        padding-top: rem(90);
+        padding-bottom: rem(65);
+        
+    }
+    
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: rem(60);
+    
+        @include below($tab) {
+            flex-wrap: wrap;
+            margin-bottom: rem(45);
+        }
+    }
+    
+    &__item {
+        display: flex;
+        flex-direction: column;
+        width: rem(285);
+        
+        @include below($tab) {
+            position: relative;
+            
+            &:before {
+                position: absolute;
+                top: 0;
+                right: rem(-77);
+        
+                height: 100%;
+                border-right: rem(1) solid #e7e8ec;
+                content: '';
+                opacity: 0.3;
+            }
+            
+            &:nth-of-type(2):before {
+                display: none;
+            }
+        }
+        
+        &:not(:last-child) {
+            @include below($tab) {
+                padding-bottom: rem(80);
+    
+                .news__text:before {
+                    display: none;
+                }
+            }
+            
+            .news__text:before {
+                position: absolute;
+                top: 0;
+                right: rem(-77);
+    
+                height: 100%;
+                border-right: rem(1) solid #e7e8ec;
+                content: '';
+                opacity: 0.3;
+            }
+        }
+    }
+    
+    &__date {
+        margin-bottom: rem(16);
+    
+        font-weight: 700;
+        font-size: rem(16);
+        line-height: 1;
+        color: #97e8b9;
+    }
+    
+    &__text {
+        position: relative;
+        
+        font-weight: 700;
+        font-size: rem(20);
+        line-height: (28/20);
+        color: #fff;
+    }
+    
+    &__link {
+        display: block;
+        margin: 0 auto;
+        width: rem(276);
+        height: rem(60);
+        
+        line-height: rem(60);
+        font-size: rem(20);
+        font-weight: 500;
+        text-align: center;
+    
+        border: rem(2) solid #fff;
+        border-radius: rem(30);
+        color: #fff;
+    }
+}

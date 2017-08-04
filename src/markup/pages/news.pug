@@ -1,0 +1,9 @@
+extends ../layouts/default
+
+include ../components/news-list/news-list
+
+block vars
+    -pageSettings.title = 'Все новости';
+
+block content
+    +news-list()
