@@ -4,5 +4,29 @@
     
     @include below($tab) {
         height: rem(110);
+    
+        &.open-nav {
+            .logo {
+                z-index: 1001;
+                
+                &__img {
+                    display: none;
+        
+                    &_white {
+                        display: block;
+                    }
+                }
+            }
+    
+            .lang {
+                display: block;
+            }
+        }
+    }
+    
+    &__container {
+        @include below($tab) {
+            width: 100%;
+        }
     }
 }

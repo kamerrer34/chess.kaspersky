@@ -8,6 +8,11 @@
             padding-top: rem(94);
             padding-bottom: rem(22);
         }
+    
+        @include below($mobile) {
+            padding-top: rem(50);
+            padding-bottom: rem(45);
+        }
     }
     
     &__title {
@@ -27,6 +32,10 @@
     
         @include below($tab) {
             margin-bottom: rem(55);
+        }
+        
+        @include below($mobile) {
+            margin-bottom: rem(95);
         }
     }
 }

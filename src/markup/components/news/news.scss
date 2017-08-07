@@ -4,7 +4,10 @@
     &__container {
         padding-top: rem(90);
         padding-bottom: rem(65);
-        
+    
+        @include below($mobile) {
+            padding-bottom: rem(113);
+        }
     }
     
     &__list {
@@ -15,6 +18,10 @@
         @include below($tab) {
             flex-wrap: wrap;
             margin-bottom: rem(45);
+        }
+    
+        @include below($mobile) {
+            margin-bottom: 0;
         }
     }
     
@@ -41,6 +48,15 @@
                 display: none;
             }
         }
+    
+        @include below($mobile) {
+            width: 100%;
+            margin-bottom: rem(56);
+    
+            &:before {
+                display: none;
+            }
+        }
         
         &:not(:last-child) {
             @include below($tab) {
@@ -50,7 +66,11 @@
                     display: none;
                 }
             }
-            
+    
+            @include below($mobile) {
+                padding-bottom: 0;
+            }
+    
             .news__text:before {
                 position: absolute;
                 top: 0;
@@ -60,6 +80,10 @@
                 border-right: rem(1) solid #e7e8ec;
                 content: '';
                 opacity: 0.3;
+    
+                @include below($mobile) {
+                    display: none;
+                }
             }
         }
     }

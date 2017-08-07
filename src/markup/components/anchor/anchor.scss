@@ -20,6 +20,10 @@
     
     &_news {
         margin-top: rem(-80);
+    
+        @include below($mobile) {
+            margin-top: rem(-52);
+        }
     }
     
     &:before {

@@ -10,6 +10,11 @@
     font-weight: 100;
     color: #fff;
     opacity: 1;
+    
+    @include below($mobile) {
+        top: rem(-45);
+        right: 0;
+    }
 }
 
 .mfp-inline-holder,
@@ -24,6 +29,11 @@
     
         @include below($tab) {
             width: rem(724);
+            border-radius: rem(16);
+        }
+    
+        @include below($mobile) {
+            width: rem(420);
         }
     }
 }

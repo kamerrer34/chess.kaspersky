@@ -5,6 +5,11 @@
     
     background-color: #6c7073;
     
+    @include below($mobile) {
+        height: rem(145);
+        text-align: center;
+    }
+    
     &__container {
         padding: 0;
     }
@@ -20,5 +25,10 @@
         position: absolute;
         top: rem(40);
         right: 0;
+    
+        @include below($mobile) {
+            top: rem(80);
+            left: 0;
+        }
     }
 }

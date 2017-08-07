@@ -2,11 +2,19 @@
     overflow: hidden;
     border-radius: rem(7) rem(7) rem(16) rem(16);
     
+    @include below($tab) {
+        border-radius: rem(16);
+    }
+    
     &__img {
         display: block;
         width: 100%;
         height: rem(405);
         overflow: hidden;
+    
+        @include below($mobile) {
+            height: rem(300);
+        }
     
         img {
             width: 100%;
@@ -37,9 +45,6 @@
     }
     
     &__text {
-        max-height: rem(360);
-        overflow-y: auto;
-        
         font-weight: 300;
         font-size: rem(16);
         line-height: (30/16);

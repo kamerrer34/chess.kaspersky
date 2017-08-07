@@ -7,12 +7,21 @@
             @include below($tab) {
                 padding-bottom: rem(68);
             }
+    
+            @include below($mobile) {
+                padding-top: rem(15);
+                padding-bottom: rem(44);
+            }
         }
     }
     
     &__container {
         padding-top: rem(65);
         padding-bottom: rem(120);
+    
+        @include below($mobile) {
+            padding-top: rem(90);
+        }
     }
     
     &__title {
@@ -25,6 +34,11 @@
     
         @include below($tab) {
             margin-bottom: rem(40);
+        }
+    
+        @include below($mobile) {
+            margin-bottom: rem(35);
+            line-height: (38/24);
         }
     }
 }

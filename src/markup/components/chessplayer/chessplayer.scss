@@ -8,6 +8,11 @@
             padding-top: rem(90);
             padding-bottom: rem(135);
         }
+    
+        @include below($mobile) {
+            padding-top: rem(46);
+            padding-bottom: rem(50);
+        }
     }
     
     &__title {
@@ -20,6 +25,11 @@
             margin-bottom: rem(40);
             
             line-height: (60/44);
+        }
+    
+        @include below($mobile) {
+            width: 100%;
+            margin-bottom: rem(35);
         }
     }
     
@@ -39,6 +49,10 @@
         @include below($tab) {
             margin-top: rem(72);
             text-align: center;
+        }
+    
+        @include below($mobile) {
+            margin-top: rem(75);
         }
     }
     
@@ -93,6 +107,10 @@
             
             font-size: rem(24);
             line-height: (48/24);
+        }
+    
+        @include below($mobile) {
+            width: 100%;
         }
     }
 }

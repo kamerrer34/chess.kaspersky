@@ -10,6 +10,11 @@
         width: rem(16);
         height: rem(16);
         margin-left: rem(22);
+    
+        @include below($mobile) {
+            margin-left: rem(12);
+            margin-right: rem(12);
+        }
     }
     
     &__link {

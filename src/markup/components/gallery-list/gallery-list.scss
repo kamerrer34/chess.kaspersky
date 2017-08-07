@@ -21,6 +21,11 @@
             margin-right: rem(5);
             margin-bottom: rem(5);
         }
+    
+        @include below($mobile) {
+            width: rem(101);
+            height: rem(101);
+        }
         
         &:nth-of-type(3),
         &:nth-of-type(4),
@@ -30,6 +35,18 @@
             @include below($tab) {
                 width: rem(235);
             }
+    
+            @include below($mobile) {
+                width: rem(101);
+            }
+        }
+    
+        &:nth-of-type(3),
+        &:nth-of-type(9),
+        &:nth-of-type(11){
+            @include below($mobile) {
+                width: rem(207);
+            }
         }
         
         &:nth-of-type(4) {
@@ -37,6 +54,10 @@
     
             @include below($tab) {
                 height: rem(235);
+            }
+    
+            @include below($mobile) {
+                height: rem(101);
             }
         }
         

@@ -3,6 +3,63 @@
     
     width: rem(110);
     
+    &_nav {
+        @include below($tab) {
+            width: 100%;
+            
+            .dropdown__list {
+                position: static;
+                
+                display: block !important;
+                border: none;
+                background: none;
+            }
+            
+            .dropdown__link {
+                font-size: rem(36);
+                line-height: rem(88);
+                color: #fff;
+                
+                &_title {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+    &_lang {
+        @include below($tab) {
+            width: rem(80);
+            
+            .dropdown__list {
+                background: none;
+                border: none;
+            }
+            
+            .dropdown__link {
+                font-size: rem(14);
+                line-height: (28/14);
+                text-align: left;
+                color: #fff;
+                
+                &_title {
+                    display: inline-block;
+                    margin-bottom: rem(5);
+                    border-bottom: rem(1) solid;
+                    line-height: (20/14);
+                    
+                    &.active {
+                        background: none;
+                    }
+                    
+                    &:before{
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    
     &__list {
         @include list-reset();
         position: absolute;

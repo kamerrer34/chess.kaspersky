@@ -19,6 +19,10 @@ html {
     @include below($tab) {
         font-size: 16 / 900 * 100 + vw;
     }
+    
+    @include below($mobile) {
+        font-size: 16 / 500 * 100 + vw;
+    }
 }
 
 html,
@@ -42,6 +46,10 @@ section {
     
     @include below($tab) {
         width: rem(720);
+    }
+    
+    @include below($mobile) {
+        width: rem(420);
     }
 }
 

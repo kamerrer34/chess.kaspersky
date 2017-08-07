@@ -3,7 +3,19 @@
     left: 0;
     top: rem(23);
     
+    @include below($tab) {
+        left: rem(80);
+    }
+    
+    @include below($mobile) {
+        left: rem(40);
+    }
+    
     &__img {
         width: rem(210);
+        
+        &_white {
+            display: none;
+        }
     }
 }

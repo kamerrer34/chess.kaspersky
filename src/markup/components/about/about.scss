@@ -9,6 +9,10 @@
         @include below($tab) {
             padding-bottom: rem(44);
         }
+    
+        @include below($mobile) {
+            padding-bottom: rem(64);
+        }
     }
     
     &__img {
@@ -21,13 +25,31 @@
         @include below($tab) {
             right: rem(-115);
         }
+    
+        @include below($mobile) {
+            width: rem(243);
+        }
     }
     
     &__title {
         color: #fff;
+        
+        span {
+            display: none;
+        }
     
         @include below($tab) {
             width: rem(685);
+        }
+    
+        @include below($mobile) {
+            width: rem(360);
+            margin-left: auto;
+            margin-right: auto;
+    
+            span {
+                display: inline;
+            }
         }
     }
     
@@ -48,6 +70,10 @@
             margin-top: rem(47);
             margin-bottom: rem(23);
             width: rem(535);
+        }
+    
+        @include below($mobile) {
+            width: rem(365);
         }
         
         &:before {
@@ -71,5 +97,9 @@
         line-height: (30/16);
         color: #000;
         opacity: 0.5;
+    
+        @include below($mobile) {
+            width: rem(300);
+        }
     }
 }

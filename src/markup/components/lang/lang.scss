@@ -4,6 +4,14 @@
     right: 0;
     
     @include below($tab) {
+        top: rem(42);
+        right: rem(110);
+        z-index: 1001;
+        
         display: none;
+    }
+    
+    @include below($mobile) {
+        right: rem(70);
     }
 }

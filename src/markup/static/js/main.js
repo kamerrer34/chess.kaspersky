@@ -2,6 +2,7 @@
 
 import polyfills from './libraries/polyfills';
 
+import 'components/header-nav/header-nav';
 import 'components/scroller/scroller';
 import 'components/dropdown/dropdown';
 import 'components/anchor/anchor';

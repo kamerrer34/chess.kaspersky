@@ -8,6 +8,11 @@
             padding-top: rem(95);
             padding-bottom: rem(120);
         }
+    
+        @include below($mobile) {
+            padding-top: rem(50);
+            padding-bottom: rem(48);
+        }
     }
     
     &__title {

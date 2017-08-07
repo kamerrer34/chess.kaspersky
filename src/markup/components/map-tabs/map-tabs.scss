@@ -11,6 +11,10 @@
             
             margin-top: rem(-10);
         }
+    
+        @include below($mobile) {
+            top: rem(-105);
+        }
     }
     
     &__head-link {

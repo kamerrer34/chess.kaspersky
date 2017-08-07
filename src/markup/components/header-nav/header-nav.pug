@@ -2,9 +2,13 @@ include ../dropdown/dropdown
 
 mixin header-nav(data)
     +b.header-nav()&attributes(attributes)
+        +e.BUTTON.btn(type='button')
+
         +e.UL.list
-            +e.LI.item
-                +dropdown(dropdown.main)
+            +e.LI.item(class={'active': pageSettings.title === 'Главная'})
+                +e.A.link._main(href='index.html') Главная
+
+                +dropdown(dropdown.main)._nav
 
             +e.LI.item(class={'active': pageSettings.title === 'Все новости'})
                 +e.A.link(href='news.html') Все новости

@@ -30,6 +30,11 @@
             height: rem(465);
             margin-bottom: rem(65);
         }
+    
+        @include below($mobile) {
+            width: 100%;
+            height: auto;
+        }
     }
     
     &__more {
