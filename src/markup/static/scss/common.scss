@@ -25,6 +25,14 @@ html {
     }
 }
 
+body {
+    padding-top: rem(100);
+    
+    @include below($tab) {
+        padding-top: rem(110);
+    }
+}
+
 html,
 body {
     height: 100%;

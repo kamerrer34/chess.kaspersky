@@ -1,70 +1,179 @@
 if (document.getElementById('location')) {
 
-    let center = new google.maps.LatLng(55.7494733, 37.3523245);
-    let points = [
-        {
-            lat: 53.8838069,
-            lng: 27.4548931,
-            icon: 1,
-            city: 'Минск',
-            address: 'Via Luigi Pulci, 14 - 00162 <br>Rome,  Italy',
-            descr: 'The oldest chess club in Rome <br>(sibce 120 years,in several locations)'
-        },
-        {
-            lat: 54.7000902,
-            lng: 25.1128514,
-            icon: 2,
-            city: 'Вильнюс',
-            address: 'Via Luigi Pulci, 14 - 00162 <br>Rome,  Italy',
-            descr: 'The oldest chess club in Rome <br>(sibce 120 years,in several locations)'
-        },
-        {
-            lat: 55.7494733,
-            lng: 37.3523245,
-            icon: 3,
-            city: 'Москва',
-            address: 'Via Luigi Pulci, 14 - 00162 <br>Rome,  Italy',
-            descr: 'The oldest chess club in Rome <br>(sibce 120 years,in several locations)'
-        },
-        {
-            lat: 56.2926609,
-            lng: 43.7866646,
-            icon: 1,
-            city: 'Нижний Новгород',
-            address: 'Via Luigi Pulci, 14 - 00162 <br>Rome,  Italy',
-            descr: 'The oldest chess club in Rome <br>(sibce 120 years,in several locations)'
-        },
-        {
-            lat: 49.994507,
-            lng: 36.1457433,
-            icon: 2,
-            city: 'Харьков',
-            address: 'Via Luigi Pulci, 14 - 00162 <br>Rome,  Italy',
-            descr: 'The oldest chess club in Rome <br>(sibce 120 years,in several locations)'
-        },
-        {
-            lat: 54.8086988,
-            lng: 55.8807929,
-            icon: 3,
-            city: 'Уфа',
-            address: 'Via Luigi Pulci, 14 - 00162 <br>Rome,  Italy',
-            descr: 'The oldest chess club in Rome <br>(sibce 120 years,in several locations)'
-        }
-    ];
-
     let options = {
         zoom: 5,
+        scrollwheel: false,
+        styles: [
+            {
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#f5f5f5"
+                    }
+                ]
+            },
+            {
+                "elementType": "labels.icon",
+                "stylers": [
+                    {
+                        "visibility": "off"
+                    }
+                ]
+            },
+            {
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#616161"
+                    }
+                ]
+            },
+            {
+                "elementType": "labels.text.stroke",
+                "stylers": [
+                    {
+                        "color": "#f5f5f5"
+                    }
+                ]
+            },
+            {
+                "featureType": "administrative.land_parcel",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#bdbdbd"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#eeeeee"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#757575"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi.park",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#e5e5e5"
+                    }
+                ]
+            },
+            {
+                "featureType": "poi.park",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#9e9e9e"
+                    }
+                ]
+            },
+            {
+                "featureType": "road",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#9399A3"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.arterial",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#757575"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#dadada"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.highway",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#616161"
+                    }
+                ]
+            },
+            {
+                "featureType": "road.local",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#9e9e9e"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit.line",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#e5e5e5"
+                    }
+                ]
+            },
+            {
+                "featureType": "transit.station",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#eeeeee"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "geometry",
+                "stylers": [
+                    {
+                        "color": "#DFE1E4"
+                    }
+                ]
+            },
+            {
+                "featureType": "water",
+                "elementType": "labels.text.fill",
+                "stylers": [
+                    {
+                        "color": "#DFE1E4"
+                    }
+                ]
+            }
+        ],
         mapTypeControl: false,
         streetViewControl: false,
-        zoomControl: false,
-        center: center,
+        zoomControl: true,
+        center: mapCenter,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
     let map = new google.maps.Map(document.getElementById('location'), options);
 
-    for (let i = 0; i < points.length; i++) {
-        let point = points[i];
+    for (let i = 0; i < mapPoints.length; i++) {
+        let point = mapPoints[i];
 
         let marker = new google.maps.Marker({
             position: {lat: point.lat, lng: point.lng},
