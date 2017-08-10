@@ -209,28 +209,43 @@ if (document.getElementById('location')) {
             }
         });
 
-        map.panTo(latLng);
+        let geocoder = new google.maps.Geocoder();
+        let latlngStr = String(latLng).slice(1, -1).split(', ');
+        let latlngObj = {lat: parseFloat(latlngStr[0]), lng: parseFloat(latlngStr[1])};
 
-        let contentString = '<form class="map-location__form">'+
-            '<input type="hidden" name="locat" value="'+ latLng +'">' +
-            '<input type="text" name="name" class="map-location__input" placeholder="Название">' +
-            '<textarea name="text" class="map-location__textarea" placeholder="Комментарий"></textarea>' +
-            '<button type="submit" class="map-location__btn">Добавить</button>' +
-            '</form>';
+        geocoder.geocode({'location': latlngObj}, function(results) {
+            let city = '';
 
-        let infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 270
-        });
+            Array.prototype.forEach.call(results[1].address_components, function (el) {
+                let type = el.types[0];
+                if (type === 'locality') {
+                    city = el.long_name;
+                }
+            });
 
-        infowindow.open(map, marker);
-        $('.gm-style-iw').prev().addClass('map-location__arr');
-        $('.gm-style-iw').parent().addClass('map-location__inner add');
+            map.panTo(latLng);
 
-        $('.map-location__form').on('submit', function (e) {
-            e.preventDefault();
-            console.log('submit form');
+            let contentString = '<form class="map-location__form">'+
+                '<input type="hidden" name="locat" value="'+ latLng +'">' +
+                '<input type="hidden" name="city" value="'+ city +'">' +
+                '<input type="text" name="name" class="map-location__input" placeholder="Название">' +
+                '<textarea name="text" class="map-location__textarea" placeholder="Комментарий"></textarea>' +
+                '<button type="submit" class="map-location__btn">Добавить</button>' +
+                '</form>';
 
+            let infowindow = new google.maps.InfoWindow({
+                content: contentString,
+                maxWidth: 270
+            });
+
+            infowindow.open(map, marker);
+            $('.gm-style-iw').prev().addClass('map-location__arr');
+            $('.gm-style-iw').parent().addClass('map-location__inner add');
+
+            $('.map-location__form').on('submit', function (e) {
+                e.preventDefault();
+                console.log('submit form');
+            });
         });
     }
 
