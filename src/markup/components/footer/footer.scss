@@ -15,10 +15,15 @@
     }
     
     &__text {
-        font-size: 16px;
+        font-size: rem(16);
         font-weight: 100;
         line-height: rem(100);
         color: #fff;
+        
+        @include below($mobile) {
+            padding-top: rem(40);
+            line-height: 1;
+        }
     }
     
     &__social-btn {

@@ -31,6 +31,10 @@ body {
     @include below($tab) {
         padding-top: rem(110);
     }
+    
+    &.open-popup {
+        overflow: hidden;
+    }
 }
 
 html,

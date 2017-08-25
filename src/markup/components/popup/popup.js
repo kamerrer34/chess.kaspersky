@@ -11,6 +11,10 @@ $('.js-open-post').magnificPopup({
             this.content.find('.js-scroller').mCustomScrollbar({
                 theme: 'simple'
             });
+            $('body').addClass('open-popup');
+        },
+        close: function() {
+            $('body').removeClass('open-popup');
         }
     }
 });

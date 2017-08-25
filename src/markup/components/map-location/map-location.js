@@ -1,5 +1,7 @@
 if (document.getElementById('location')) {
 
+    let mapCenter = new google.maps.LatLng(55.7494733, 37.3523245);
+
     let options = {
         zoom: 5,
         scrollwheel: false,
@@ -171,34 +173,71 @@ if (document.getElementById('location')) {
     };
 
     let map = new google.maps.Map(document.getElementById('location'), options);
+    let markers = [];
 
-    for (let i = 0; i < mapPoints.length; i++) {
-        let point = mapPoints[i];
-
-        let marker = new google.maps.Marker({
-            position: {lat: point.lat, lng: point.lng},
-            map: map,
-            icon: {
-                url: '/static/img/assets/map-location/icon'+ point.icon +'.png',
+    function drawMap(city, section) {
+        if (markers) {
+            for (let i = 0; i < markers.length; i++) {
+                markers[i].setMap(null);
             }
-        });
+            markers.length = 0;
+        }
 
-        let contentString = '<div class="map-location__title">'+ point.city + '</div>'+
-            '<div class="map-location__text map-location__text_descr">'+ point.address +'</div>'+
-            '<div class="map-location__text">'+ point.descr + '</div>';
+        for (let i = 0; i < mapPoints.length; i++) {
+            let point = mapPoints[i];
 
-        let infowindow = new google.maps.InfoWindow({
-            content: contentString,
-            maxWidth: 270
-        });
+            let contentString = '<div class="map-location__title">'+ point.city + '</div>'+
+                '<div class="map-location__text map-location__text_descr">'+ point.address +'</div>'+
+                '<div class="map-location__text">'+ point.descr + '</div>';
 
-        marker.addListener('click', function() {
-            infowindow.open(map, marker);
-            $('.gm-style-iw').prev().addClass('map-location__arr');
-            $('.gm-style-iw').parent().addClass('map-location__inner');
-        });
+            let infowindow = new google.maps.InfoWindow({
+                content: contentString,
+                maxWidth: 270
+            });
+            
+            function createMarker() {
+                let marker = new google.maps.Marker({
+                    position: {lat: point.lat, lng: point.lng},
+                    map: map,
+                    icon: {
+                        url: '/static/img/assets/map-location/icon'+ point.icon +'.png',
+                        size: new google.maps.Size(76, 92)
+                    }
+                });
+
+                markers.push(marker);
+
+                marker.addListener('click', function() {
+                    $('.map-location__inner').hide();
+                    infowindow.open(map, marker);
+                    $('.gm-style-iw').prev().addClass('map-location__arr');
+                    $('.gm-style-iw').parent().addClass('map-location__inner');
+                });
+            }
+
+            if (city || section) {
+                if (city && section) {
+                    if (point.city === city && point.level === section) {
+                        createMarker();
+                        map.setCenter({lat: point.lat, lng: point.lng});
+                    }
+                } else {
+                    if (city && point.city === city) {
+                        createMarker();
+                        map.setCenter({lat: point.lat, lng: point.lng});
+                    }
+                    if (section && point.level === section) {
+                        createMarker();
+                        map.setCenter({lat: point.lat, lng: point.lng});
+                    }
+                }
+            } else {
+                createMarker();
+            }
+        }
     }
 
+    drawMap();
 
     function addMarker(latLng, map) {
         let marker = new google.maps.Marker({
@@ -206,6 +245,7 @@ if (document.getElementById('location')) {
             map: map,
             icon: {
                 url: '/static/img/assets/map-location/icon.png',
+                size: new google.maps.Size(76, 92)
             }
         });
 
@@ -250,6 +290,22 @@ if (document.getElementById('location')) {
     }
 
     map.addListener('click', function(e) {
+        $('.map-location__inner').hide();
         addMarker(e.latLng, map);
+    });
+
+    $('.search__select').on('change', function () {
+        let city = $('#map-city').find('select').val(),
+            section = $('#map-section').find('select').val();
+
+        if (city === '0') {
+            city = '';
+        }
+
+        if (section === '0') {
+            section = '';
+        }
+
+        drawMap(city, section);
     });
 }

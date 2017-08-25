@@ -6,6 +6,7 @@
     &.active {
         .header-nav__list {
             top: 0;
+            height: 100vh;
         }
         
         .header-nav__btn {
@@ -47,8 +48,9 @@
     
             width: 100%;
             padding-top: rem(110);
-            padding-bottom: rem(110);
-            
+            padding-bottom: rem(50);
+            overflow-y: auto;
+           
             background-color: transparentize($color-1, 0.1);
         }
     }

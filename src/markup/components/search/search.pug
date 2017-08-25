@@ -2,4 +2,4 @@ mixin search(data)
     +b.search()&attributes(attributes)
         +e.SELECT.select.js-select(data-place=data.place)
             each item in data.items
-                option #{item}
+                option(value=item.val) #{item.ttl}
